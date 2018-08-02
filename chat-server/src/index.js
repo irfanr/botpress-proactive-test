@@ -59,7 +59,7 @@ module.exports = async bp => {
 
       console.log('Hey there!');
 
-      bp.renderers.sendToUser(user, '#builtin_text', {
+      await bp.renderers.sendToUser(user, '#builtin_text', {
           text: 'Hey there!',
           typing: true
       })
