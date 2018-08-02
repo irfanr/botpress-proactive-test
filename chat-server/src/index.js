@@ -46,9 +46,25 @@ module.exports = async bp => {
   ////////////////////////////
 
   // All events that should be processed by the Flow Manager
-  bp.hear({ type: /bp_dialog_timeout|text|message|quick_reply/i }, (event, next) => {
-    bp.dialogEngine.processMessage(event.sessionId || event.user.id, event).then()
-  })
+  // bp.hear({ type: /bp_dialog_timeout|text|message|quick_reply/i }, (event, next) => {
+  //   bp.dialogEngine.processMessage(event.sessionId || event.user.id, event).then()
+  // })
+
+  bp.hear({
+      type: /proactive-trigger/i
+  }, async ({
+      user,
+      text
+  }, next) => {
+
+      console.log('Hey there!');
+
+      bp.renderers.sendToUser(user, '#builtin_text', {
+          text: 'Hey there!',
+          typing: true
+      })
+      next();
+  });
 }
 
 async function registerBuiltin(bp) {

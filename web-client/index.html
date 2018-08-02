@@ -5,7 +5,9 @@
 Test Page
 <script src="http://localhost:3001/api/botpress-platform-webchat/inject.js"></script>
 <script>
-  window.botpressWebChat.init({ host: 'http://localhost:3001' })
+  window.botpressWebChat.init({ host: 'http://localhost:3001' });
+  window.botpressWebChat.sendEvent({ type: 'show' });
+  window.botpressWebChat.sendEvent({ type: 'proactive-trigger', platform: 'web', text: 'smth' });
 </script>
 </body>
 </html>
