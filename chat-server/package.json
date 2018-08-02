@@ -1,0 +1,28 @@
+{
+  "name": "test-bot",
+  "version": "1.0.0",
+  "description": "Test Bot",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">= 6.1 < 9"
+  },
+  "dependencies": {
+    "botpress": "10.24.4",
+    "@botpress/audience": "10.24.4",
+    "@botpress/builtins": "10.24.4",
+    "@botpress/nlu": "10.24.4",
+    "@botpress/skill-choice": "10.24.4",
+    "@botpress/hitl": "10.24.4",
+    "@botpress/channel-web": "10.24.4",
+    "jsdoc-api": "^4.0.3",
+    "lodash": "^4.17.10",
+    "yn": "^2.0.0"
+  },
+  "scripts": {
+    "start": "PORT=3001 botpress start",
+    "ghost-sync": "botpress ghost-sync",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Irfan Romadona",
+  "license": "AGPL-3.0-only"
+}
