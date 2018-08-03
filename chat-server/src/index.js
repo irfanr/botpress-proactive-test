@@ -51,13 +51,13 @@ module.exports = async bp => {
   // })
 
   bp.hear({
-      type: /proactive-trigger/i
+      type: /bp_dialog_timeout|text|message|quick_reply/i
   }, async ({
       user,
       text
   }, next) => {
 
-      console.log('Hey there!');
+      bp.logger.info('Hey there!');
 
       await bp.renderers.sendToUser(user, '#builtin_text', {
           text: 'Hey there!',
